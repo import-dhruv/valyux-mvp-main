@@ -1,17 +1,9 @@
 import type React from "react"
-import { redirect } from "next/navigation"
-import { createClient } from "@/lib/supabase/server"
 
+// Auth layout simplified for MVP - no authentication needed
 export default async function AuthLayout({ children }: { children: React.ReactNode }) {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
-  // Redirect authenticated users away from auth pages
-  if (user) {
-    redirect("/")
-  }
+  // For MVP: Auth pages are accessible but not functional
+  // No Supabase check to avoid build-time errors
 
   return (
     <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4">
