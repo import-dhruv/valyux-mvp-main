@@ -26,7 +26,7 @@ export function TrendingSection() {
               <Link
                 key={product.id}
                 href={`/product/${product.id}?name=${encodeURIComponent(product.name)}&brand=${encodeURIComponent(product.brand)}`}
-                className="bg-card rounded-lg overflow-hidden border border-border hover:shadow-lg hover:border-primary/50 transition cursor-pointer group"
+                className="bg-card rounded-lg overflow-hidden border border-border hover:shadow-lg hover:border-primary/50 transition cursor-pointer group h-full flex flex-col"
               >
                 <div className="relative h-40 bg-muted overflow-hidden">
                   <img
@@ -50,12 +50,12 @@ export function TrendingSection() {
                     )
                   )}
                 </div>
-                <div className="p-4">
+                <div className="p-4 flex-1 flex flex-col">
                   <p className="text-xs text-muted-foreground font-semibold mb-1 uppercase">{product.category}</p>
                   <h3 className="font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition">
                     {product.name}
                   </h3>
-                  <div className="space-y-1 mb-4">
+                  <div className="space-y-1 mb-4 flex-1">
                     {product.category === 'flights' ? (
                       // For flights, show starting price
                       <>
@@ -97,7 +97,7 @@ export function TrendingSection() {
                       ⭐ {product.ratings.average} ({product.ratings.count} reviews)
                     </p>
                   </div>
-                  <button className="w-full bg-primary text-primary-foreground py-2 rounded-lg font-semibold hover:bg-primary/90 transition text-sm">
+                  <button className="w-full bg-primary text-primary-foreground py-2 rounded-lg font-semibold hover:bg-primary/90 transition text-sm mt-auto">
                     {product.category === 'flights' ? 'View Flights' : product.category === 'hotels' ? 'View Hotels' : 'Compare Prices'}
                   </button>
                 </div>

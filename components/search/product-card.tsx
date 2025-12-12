@@ -72,7 +72,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.name}
         </h3>
 
-        <p className="text-xs lg:text-sm text-muted-foreground mb-3 lg:mb-4 line-clamp-2 flex-1">{product.description}</p>
+        <p className="text-xs lg:text-sm text-muted-foreground mb-3 lg:mb-4 line-clamp-2">{product.description}</p>
 
         {/* Price Info */}
         <div className="space-y-2 mb-3 lg:mb-4 border-t border-border pt-3 lg:pt-4">
@@ -91,7 +91,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <button
           onClick={handleCompare}
           disabled={!canAddMore()}
-          className="w-full bg-primary text-primary-foreground py-2 rounded-lg font-semibold hover:bg-primary/90 disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed transition text-sm lg:text-base"
+          className="w-full bg-primary text-primary-foreground py-2 rounded-lg font-semibold hover:bg-primary/90 disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed transition text-sm lg:text-base mt-auto"
         >
           Compare Prices
         </button>
