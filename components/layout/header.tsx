@@ -24,7 +24,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 mr-8">
             <img
-              src="/valyux-logo.png"
+              src="/logo.png?v=2"
               alt="Valyux Logo"
               className="h-10 w-auto"
             />

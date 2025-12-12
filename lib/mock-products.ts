@@ -26,6 +26,143 @@ export interface Product {
 
 export const mockProducts: Product[] = [
     {
+        id: "demo-electronics-iphone17pro",
+        name: "Apple iPhone 17 Pro - Cosmic Orange 256GB",
+        brand: "Apple",
+        category: "electronics",
+        description: "Revolutionary iPhone 17 Pro with A18 Pro chip, stunning Cosmic Orange titanium design, and breakthrough camera technology",
+        image: "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=800&h=800&fit=crop",
+        prices: [
+            {
+                retailer: "Flipkart",
+                price: 134900,
+                currency: "INR",
+                url: "https://www.flipkart.com/apple-iphone-17-pro-cosmic-orange-256-gb/p/itm76fe37ca9ea8c?pid=MOBHFN6YR8HF5BQ9&lid=LSTMOBHFN6YR8HF5BQ9RBYDOE&marketplace=FLIPKART&q=iphone+15+pro+17&store=tyy%2F4io&srno=s_1_1&otracker=AS_QueryStore_OrganicAutoSuggest_2_13_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_13_na_na_na&fm=organic&iid=007abb0b-0132-4e1c-a253-f525f8d390fa.MOBHFN6YR8HF5BQ9.SEARCH&ppt=hp&ppn=homepage&ssid=lwfdan2d000000001765539605575&qH=c24a38c021f35b13",
+                availability: "in_stock"
+            },
+            {
+                retailer: "Amazon India",
+                price: 132999,
+                currency: "INR",
+                url: "https://www.amazon.in/iPhone-Pro-256-Promotion-Breakthrough/dp/B0FQG1LPVF/ref=sr_1_1?sr=8-1",
+                availability: "in_stock"
+            },
+            {
+                retailer: "Croma",
+                price: 134900,
+                currency: "INR",
+                url: "https://www.croma.com/apple-iphone-17-pro-256gb-cosmic-orange-/p/317417",
+                availability: "in_stock"
+            }
+        ],
+        ratings: { average: 4.9, count: 15847 },
+        specifications: {
+            "Storage": "256GB",
+            "RAM": "12GB",
+            "Display": "6.3-inch ProMotion LTPO OLED",
+            "Processor": "A18 Pro",
+            "Camera": "64MP Main + 48MP Ultra Wide + 12MP Telephoto",
+            "Color": "Cosmic Orange"
+        },
+        tags: ["smartphone", "apple", "iphone", "iphone17", "electronics", "trending"]
+    },
+    {
+        id: "demo-electronics-macbook-m4",
+        name: "Apple MacBook Air M4 - 16GB/512GB SSD",
+        brand: "Apple",
+        category: "electronics",
+        description: "Revolutionary MacBook Air with M4 chip, 13.6-inch Liquid Retina display, 16GB unified memory, and 512GB SSD. Ultra-thin and powerful.",
+        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&h=800&fit=crop",
+        prices: [
+            {
+                retailer: "Reliance Digital",
+                price: 111900,
+                currency: "INR",
+                url: "https://www.reliancedigital.in/product/apple-mc6u4hna-macbook-air-apple-m4-chip16-gb512-gb-ssdmacos-sequoialiquid-retina-3446-cm-136-inch-sky-blue-m7x80l-8968957",
+                availability: "in_stock"
+            },
+            {
+                retailer: "Croma",
+                price: 114990,
+                currency: "INR",
+                url: "https://www.croma.com/apple-macbook-air-13-6-inch-m4-16gb-512gb-macos-silver-/p/314072",
+                availability: "in_stock"
+            },
+            {
+                retailer: "Amazon India",
+                price: 119900,
+                currency: "INR",
+                url: "https://www.amazon.in/Apple-MacBook-13-inch-10-core-Unified/dp/B0DZDDKTQZ/ref=sr_1_3?nsdOptOutParam=true&sr=8-3",
+                availability: "in_stock"
+            },
+            {
+                retailer: "Flipkart",
+                price: 144900,
+                currency: "INR",
+                url: "https://www.flipkart.com/apple-macbook-air-m4-16-gb-512-gb-ssd-macos-sequoia-mc7c4hn-a/p/itmdb7ee0ce0e128?pid=COMH9ZWQ389TVPJG&lid=LSTCOMH9ZWQ389TVPJGO1QM12&marketplace=FLIPKART&q=macbook+air+m5&store=6bo%2Fb5g&srno=s_1_4&otracker=search&otracker1=search&fm=Search&iid=8b4e6934-6810-4b67-9bb7-4d3c27ae7dcd.COMH9ZWQ389TVPJG.SEARCH&ppt=sp&ppn=sp&ssid=puh3z4847k0000001765544278869&qH=63d10def9d97a2d3",
+                availability: "in_stock"
+            }
+        ],
+        ratings: { average: 4.9, count: 8234 },
+        specifications: {
+            "Processor": "Apple M4 (10-core CPU, 10-core GPU)",
+            "RAM": "16GB Unified Memory",
+            "Storage": "512GB SSD",
+            "Display": "13.6-inch Liquid Retina (2880x1864)",
+            "Battery": "Up to 18 hours",
+            "Weight": "1.24 kg"
+        },
+        tags: ["laptop", "apple", "macbook", "m4", "electronics", "trending"]
+    },
+    {
+        id: "demo-flight-trending-001",
+        name: "Delhi to Mumbai - December 13, 2025",
+        brand: "Multiple Airlines",
+        category: "flights",
+        description: "Compare best flight prices from Delhi (DEL) to Mumbai (BOM) on December 13, 2025. Economy class, 1 adult. Non-stop flights available with multiple carriers.",
+        image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=800&fit=crop",
+        prices: [
+            {
+                retailer: "Ixigo",
+                price: 9006,
+                currency: "INR",
+                url: "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=13122025&adults=1&children=0&infants=0&class=e&source=Search+Form",
+                availability: "in_stock"
+            },
+            {
+                retailer: "MakeMyTrip",
+                price: 9500,
+                currency: "INR",
+                url: "https://www.makemytrip.com/flight/search?itinerary=DEL-BOM-13/12/2025&tripType=O&paxType=A-1_C-0_I-0&intl=false&cabinClass=E&lang=eng",
+                availability: "in_stock"
+            },
+            {
+                retailer: "Goibibo",
+                price: 9650,
+                currency: "INR",
+                url: "https://www.goibibo.com/flight/search?itinerary=DEL-BOM-13/12/2025&tripType=O&paxType=A-1_C-0_I-0&intl=false&cabinClass=E&lang=eng",
+                availability: "in_stock"
+            },
+            {
+                retailer: "EaseMyTrip",
+                price: 9300,
+                currency: "INR",
+                url: "https://flight.easemytrip.us/FlightList/Index?srch=DEL-Delhi-India|BOM-Mumbai-India|13/12/2025&px=1-0-0&cbn=0&ar=undefined&isow=true&isdm=true&lang=en-us&&IsDoubleSeat=false&CCODE=US&curr=USD&apptype=B2C",
+                availability: "in_stock"
+            }
+        ],
+        ratings: { average: 4.8, count: 12456 },
+        specifications: {
+            "Route": "DEL → BOM",
+            "Date": "December 13, 2025",
+            "Duration": "~2h 15m",
+            "Passengers": "1 Adult",
+            "Class": "Economy",
+            "Type": "One-way"
+        },
+        tags: ["flight", "travel", "delhi", "mumbai", "trending", "domestic"]
+    },
+    {
         id: "demo-electronics-001",
         name: "iPhone 15 Pro 256GB - Blue Titanium",
         brand: "Apple",
@@ -95,22 +232,48 @@ export const mockProducts: Product[] = [
         name: "The Taj Mahal Palace, Mumbai - Deluxe Room",
         brand: "Taj Hotels",
         category: "hotels",
-        description: "Iconic luxury hotel overlooking the Gateway of India with world-class amenities",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=400&fit=crop",
+        description: "Iconic luxury hotel overlooking the Gateway of India with world-class amenities. Price shown is average per night.",
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=800&fit=crop",
         prices: [
-            { retailer: "Booking.com", price: 25000, currency: "INR", url: "https://www.booking.com/hotel/in/the-taj-mahal-palace-mumbai.html", availability: "in_stock" },
-            { retailer: "MakeMyTrip", price: 26000, currency: "INR", url: "https://www.makemytrip.com/hotels/taj_mahal_palace-details-mumbai.html", availability: "in_stock" },
-            { retailer: "Agoda", price: 24800, currency: "INR", url: "https://www.agoda.com/the-taj-mahal-palace-mumbai/hotel/mumbai-in.html", availability: "in_stock" }
+            {
+                retailer: "Agoda",
+                price: 18500,
+                currency: "INR",
+                url: "https://www.agoda.com/the-taj-mahal-palace-mumbai/hotel/mumbai-in.html",
+                availability: "in_stock"
+            },
+            {
+                retailer: "Booking.com",
+                price: 19200,
+                currency: "INR",
+                url: "https://www.booking.com/hotel/in/the-taj-mahal-palace-mumbai.html",
+                availability: "in_stock"
+            },
+            {
+                retailer: "MakeMyTrip",
+                price: 20500,
+                currency: "INR",
+                url: "https://www.makemytrip.com/hotels/taj_mahal_palace-details-mumbai.html",
+                availability: "in_stock"
+            },
+            {
+                retailer: "Goibibo",
+                price: 20800,
+                currency: "INR",
+                url: "https://www.goibibo.com/hotels/the-taj-mahal-palace-hotel-in-mumbai-5207114460352955315/",
+                availability: "in_stock"
+            }
         ],
         ratings: { average: 4.8, count: 12456 },
         specifications: {
             "Location": "Colaba, Mumbai",
             "Room Type": "Deluxe Room",
+            "Price Type": "Per Night (Average)",
             "Amenities": "Pool, Spa, Restaurant, Gym",
             "Check-in": "2:00 PM",
             "Check-out": "12:00 PM"
         },
-        tags: ["hotel", "luxury", "mumbai", "travel"]
+        tags: ["hotel", "luxury", "mumbai", "travel", "trending"]
     },
     {
         id: "demo-clothing-002",

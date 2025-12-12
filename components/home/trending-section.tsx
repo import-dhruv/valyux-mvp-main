@@ -34,10 +34,20 @@ export function TrendingSection() {
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition"
                   />
-                  {savings > 0 && (
-                    <Badge className="absolute top-2 right-2 bg-accent text-accent-foreground">
-                      Save ₹{savings.toLocaleString()}
+                  {product.category === 'flights' ? (
+                    <Badge className="absolute top-2 right-2 bg-blue-600 text-white">
+                      {product.prices.length} Airlines
                     </Badge>
+                  ) : product.category === 'hotels' ? (
+                    <Badge className="absolute top-2 right-2 bg-purple-600 text-white">
+                      {product.prices.length} Platforms
+                    </Badge>
+                  ) : (
+                    savings > 0 && (
+                      <Badge className="absolute top-2 right-2 bg-accent text-accent-foreground">
+                        Save ₹{savings.toLocaleString()}
+                      </Badge>
+                    )
                   )}
                 </div>
                 <div className="p-4">
@@ -46,18 +56,49 @@ export function TrendingSection() {
                     {product.name}
                   </h3>
                   <div className="space-y-1 mb-4">
-                    <p className="text-sm text-muted-foreground">
-                      Lowest: <span className="font-bold text-foreground">₹{lowestPrice.toLocaleString()}</span>
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Highest: <span className="font-bold text-foreground">₹{highestPrice.toLocaleString()}</span>
-                    </p>
+                    {product.category === 'flights' ? (
+                      // For flights, show starting price
+                      <>
+                        <p className="text-sm text-muted-foreground">
+                          Starting from
+                        </p>
+                        <p className="text-2xl font-bold text-foreground">
+                          ₹{lowestPrice.toLocaleString()}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          View all airlines
+                        </p>
+                      </>
+                    ) : product.category === 'hotels' ? (
+                      // For hotels, show per-night average pricing
+                      <>
+                        <p className="text-sm text-muted-foreground">
+                          From per night
+                        </p>
+                        <p className="text-2xl font-bold text-foreground">
+                          ₹{lowestPrice.toLocaleString()}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Compare {product.prices.length} platforms
+                        </p>
+                      </>
+                    ) : (
+                      // For other products, show lowest/highest comparison
+                      <>
+                        <p className="text-sm text-muted-foreground">
+                          Lowest: <span className="font-bold text-foreground">₹{lowestPrice.toLocaleString()}</span>
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          Highest: <span className="font-bold text-foreground">₹{highestPrice.toLocaleString()}</span>
+                        </p>
+                      </>
+                    )}
                     <p className="text-xs text-muted-foreground mt-2">
                       ⭐ {product.ratings.average} ({product.ratings.count} reviews)
                     </p>
                   </div>
                   <button className="w-full bg-primary text-primary-foreground py-2 rounded-lg font-semibold hover:bg-primary/90 transition text-sm">
-                    Compare Prices
+                    {product.category === 'flights' ? 'View Flights' : product.category === 'hotels' ? 'View Hotels' : 'Compare Prices'}
                   </button>
                 </div>
               </Link>
