@@ -2,7 +2,7 @@
 // Analyzes user query intent and returns relevant search filters
 
 import { createClient } from "@/lib/supabase/server"
-import { callPerplexity } from "@/lib/perplexity"
+import { callOpenAI } from "@/lib/openai"
 import { NextResponse } from "next/server"
 
 export async function POST(request: Request) {
@@ -27,7 +27,7 @@ Category hint: ${category || "auto-detect"}
 
 Return ONLY valid JSON, no other text.`
 
-    const aiResponse = await callPerplexity(prompt, {
+    const aiResponse = await callOpenAI(prompt, {
       max_tokens: 500,
       temperature: 0.5,
     })

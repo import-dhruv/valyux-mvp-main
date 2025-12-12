@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer"
 import { FilterSidebar } from "./filter-sidebar"
 import { ProductCard } from "./product-card"
 import type { Product } from "@/lib/types"
+import { searchProducts } from "@/lib/mock-products"
 import { ChevronDown, Loader2 } from "lucide-react"
 
 interface SearchPageClientProps {
@@ -30,10 +31,10 @@ export function SearchPageClient({ initialCategory = "" }: SearchPageClientProps
     minRating: 0,
   })
 
-  // Search products using Perplexity API
+  // Search products locally using mock data
   useEffect(() => {
-    const searchProducts = async () => {
-      if (!query.trim()) {
+    const fetchProducts = () => {
+      if (!query.trim() && !category) {
         setProducts([])
         setFilteredProducts([])
         return
@@ -43,40 +44,25 @@ export function SearchPageClient({ initialCategory = "" }: SearchPageClientProps
       setError(null)
 
       try {
-        const response = await fetch(
-          `/api/perplexity/search?q=${encodeURIComponent(query)}${category ? `&category=${category}` : ""}&limit=20`
-        )
-        const data = await response.json()
+        // Use local search function instead of API
+        // This ensures we show the verified "real" products with hardcoded consistent data
+        const results = searchProducts(query, category || undefined)
 
-        if (!response.ok) {
-          throw new Error(data.error || "Failed to search products")
-        }
+        // Map mock products to match the component's expected type if needed, 
+        // though they are structure-compatible.
+        // We'll trust the structure since it's identical.
+        setProducts(results as unknown as Product[])
 
-        // Transform Perplexity response to Product type
-        const transformedProducts: Product[] = data.data.map((p: any) => ({
-          id: p.id || `prod-${Date.now()}-${Math.random()}`,
-          name: p.name,
-          category: p.category || "electronics",
-          brand: p.brand || "Unknown",
-          description: p.description || "",
-          image: p.image || "/placeholder.svg",
-          specifications: p.specifications || {},
-          prices: p.prices || [],
-          ratings: p.ratings || { average: 0, count: 0 },
-          tags: [],
-        }))
-
-        setProducts(transformedProducts)
       } catch (err) {
         console.error("Search error:", err)
-        setError(err instanceof Error ? err.message : "Failed to search products")
+        setError("Failed to load products")
         setProducts([])
       } finally {
         setIsLoading(false)
       }
     }
 
-    searchProducts()
+    fetchProducts()
   }, [query, category])
 
   useEffect(() => {

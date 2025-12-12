@@ -2,7 +2,7 @@
 // Analyzes user search history and viewing patterns to recommend products
 
 import { createClient } from "@/lib/supabase/server"
-import { callPerplexity } from "@/lib/perplexity"
+import { callOpenAI } from "@/lib/openai"
 import { NextResponse } from "next/server"
 
 export async function POST(request: Request) {
@@ -45,7 +45,7 @@ Return a JSON array with objects containing:
 
 Return ONLY valid JSON array, no other text.`
 
-    const aiResponse = await callPerplexity(prompt, {
+    const aiResponse = await callOpenAI(prompt, {
       max_tokens: 800,
       temperature: 0.6,
     })

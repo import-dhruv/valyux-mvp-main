@@ -2,7 +2,7 @@
 // Generates pro/con analysis and buying guidance for product comparisons
 
 import { createClient } from "@/lib/supabase/server"
-import { callPerplexity } from "@/lib/perplexity"
+import { callOpenAI } from "@/lib/openai"
 import { NextResponse } from "next/server"
 
 export async function POST(request: Request) {
@@ -46,7 +46,7 @@ Provide analysis as JSON with:
 
 Return ONLY valid JSON, no other text.`
 
-    const aiResponse = await callPerplexity(prompt, {
+    const aiResponse = await callOpenAI(prompt, {
       max_tokens: 1500,
       temperature: 0.5,
     })

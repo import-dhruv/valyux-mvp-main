@@ -1,7 +1,7 @@
 // AI-powered product description generation
 // Converts raw product specifications into engaging marketing descriptions
 
-import { callPerplexity } from "@/lib/perplexity"
+import { callOpenAI } from "@/lib/openai"
 import { NextResponse } from "next/server"
 
 export async function POST(request: Request) {
@@ -17,8 +17,8 @@ export async function POST(request: Request) {
       typeof specifications === "string"
         ? specifications
         : Object.entries(specifications)
-            .map(([key, value]) => `${key}: ${value}`)
-            .join(", ")
+          .map(([key, value]) => `${key}: ${value}`)
+          .join(", ")
 
     const prompt = `
 You are a product description writer for Indian e-commerce. Create an engaging, concise product description.
@@ -35,7 +35,7 @@ Write a 2-3 sentence marketing description that:
 
 Write ONLY the description, no other text.`
 
-    const description = await callPerplexity(prompt, {
+    const description = await callOpenAI(prompt, {
       max_tokens: 300,
       temperature: 0.7,
     })
